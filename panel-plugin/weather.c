@@ -594,6 +594,7 @@ cb_weather_update(SoupSession *session,
 static gboolean
 update_handler(plugin_data *data)
 {
+    gchar *api_version = FORECAST_API;
     gchar *url;
     gboolean night_time;
     time_t now_t;

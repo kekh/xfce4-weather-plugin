@@ -659,9 +659,10 @@ update_handler(plugin_data *data)
         data->weather_update->started = TRUE;
 
         /* build url */
-        url = g_strdup_printf("https://api.met.no/weatherapi"
-                              "/locationforecastlts/1.3/?lat=%s&lon=%s&"
-                              "msl=%d",
+        url = g_strdup_printf("https://api.met.no"
+                              "/weatherapi/locationforecast/%s/"
+                              "classic?lat=%s&lon=%s&altitude=%d",
+                              api_version,
                               data->lat, data->lon, data->msl);
 
         /* start receive thread */
